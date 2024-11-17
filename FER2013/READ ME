@@ -1,0 +1,3 @@
+Detection to read facial expressions.
+
+Using FER-2013 to train and test the model to learn facial expressions from images.

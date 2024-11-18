@@ -6,7 +6,7 @@ import numpy as np
 from PIL import Image
 
 # Path to your saved model
-MODEL_PATH = r"C:\Users\kalop\CV-Project\HappyorSadPrediction\happy_sad_model_regularized.keras"
+MODEL_PATH = r"C:\Users\kalop\CV_Projects\HappyorSadPrediction\happy_sad_model_vgg16.keras"
 
 # Load the trained model
 model = load_model(MODEL_PATH)
@@ -36,7 +36,7 @@ if uploaded_file is not None:
     st.image(uploaded_file, caption="Uploaded Image", use_column_width=True)
 
     # Process the image
-    image = Image.open(uploaded_file)
+    image = Image.open(uploaded_file).convert("RGB")  # Ensure image is in RGB format
     processed_image = preprocess_image(image)
 
     # Make prediction
